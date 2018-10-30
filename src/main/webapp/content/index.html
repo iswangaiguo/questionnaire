@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>问卷调查</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/content.css" rel="stylesheet">
+</head>
+
+<body>
+    <input type='checkbox' id='sidemenu'>
+    <aside>
+        <div>
+            <button class="btn btn-default btn-lg firstone" type="button" data-toggle="collapse" data-target="#question" aria-expanded="false"
+                aria-controls="collapseExample">
+                <span class="glyphicon glyphicon-align-justify">&nbsp;全部问卷&nbsp;&nbsp;</span>
+            </button>
+            <div class="collapse" id="question">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">应用系统开发项目后评估问卷</a>
+                    <a href="#" class="list-group-item">应用支撑系统项目后评估问卷</a>
+                    <a href="#" class="list-group-item">信息化咨询服务项目后评估问卷</a>
+                    <a href="#" class="list-group-item">信息化基础设施项目后评估问卷</a>
+                    <a href="#" class="list-group-item">信息安全保障设施项目后评估问卷</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-default btn-lg" type="button" data-toggle="collapse" data-target="#score" aria-expanded="false" aria-controls="collapseExample">
+                <span class="glyphicon glyphicon glyphicon-education">&nbsp;评估结果&nbsp;&nbsp;</span>
+            </button>
+            <div class="collapse" id="score">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">应用系统开发项目后评估问卷</a>
+                    <a href="#" class="list-group-item">应用支撑系统项目后评估问卷</a>
+                    <a href="#" class="list-group-item">信息化咨询服务项目后评估问卷</a>
+                    <a href="#" class="list-group-item">信息化基础设施项目后评估问卷</a>
+                    <a href="#" class="list-group-item">信息安全保障设施项目后评估问卷</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-default btn-lg" type="button" data-toggle="collapse" data-target="#analyseresult" aria-expanded="false"
+                aria-controls="collapseExample">
+                <span class="glyphicon glyphicon glyphicon-education">&nbsp;统计分析&nbsp;&nbsp;</span>
+            </button>
+            <div class="collapse" id="analyseresult">
+                <div class="list-group">
+                     <a href="#" class="list-group-item">应用系统开发项目后评估</a>
+                     <a href="#" class="list-group-item">应用支撑系统项目后评估</a>
+                    <a href="#" class="list-group-item">信息化咨询服务项目后评估</a>
+                    <a href="#" class="list-group-item">信息化基础设施项目后评估</a>
+                    <a href="#" class="list-group-item">信息安全保障设施项目后评估</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div>
+            <label id='sideMenuControl' for='sidemenu'>≡</label>
+        </div>
+        <div id="maincontent">
+
+        </div>
+    </div>
+    <script src="../bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">                     
+
+        $(function () {
+            $('#sidemenu').attr("checked", "checked");
+        })
+        //设置活动链接样式
+        $(".list-group a").click(function () {
+            $('.list-group a').removeClass('active')
+            $(this).addClass("active")
+        })
+
+        $("#question a").each(function (index) {
+            $(this).click(function () {
+                $("#maincontent").load("form" + (index + 1) + ".html form", function () {
+                    $.ajax({
+                        type: "GET",
+                        url: "../score/getScore.do?categoryId=" + (index + 1),
+                        success: function (data) {
+                            if (data.code == 200) {
+                                $.each(data.extend.list, function (index, value) {
+                                    $("[name=a" + this.questionid + "]").val(this.score)
+                                })
+                            }
+                        },
+                        complete: function () {
+                            submitForm(index);
+                        }
+                    })
+                })
+            })
+        })
+
+        $("#score a").each(function(index){
+	        	$(this).click(function() {
+	        		$.ajax({
+	        			type:"GET",
+	        			url:"../score/getScoreAdvise.do?index="+index,
+	        			success:function(data) {
+	        				if(data.code == 200){
+		        				$("#maincontent").load("myscore.html", function () {
+			        				var result = data.extend.scoreAdvise
+			        				$("#myscore h2").text("得分:"+result.scores)
+			        				$("#myscore h4").text(result.advise)
+		        				})
+	        				} else {
+	        					alert('无记录')
+	        				}
+	        			}
+	        			
+	        		})
+	        		
+	        	})
+	        })
+        
+
+        $("#analyseresult a").each(function(index){
+        	$(this).click(function() {
+        		$.ajax({
+                    type: "GET",
+                    url: "../score/getWeightScore.do?index="+index,
+                    success: function (data) {
+                    	if(data.code == 200) {
+	                    	$("#maincontent").load("analyse.html", function () {
+	                            var list = data.extend.getWeightScore;
+	                            var labels = ["项目目标实现","项目实施过程","项目使用情况","项目效益实现","项目可持续性"]
+	                            var title = ["应用系统开发项目后评估","应用支撑系统项目后评估","信息化咨询服务项目后评估","信息化基础设施项目后评估","信息安全保障设施项目后评估"]
+	                            var ctx = document.getElementById("myChart").getContext('2d');
+	                            var myChart = new Chart(ctx, {
+	                                type: 'bar',
+	                                data: {
+	                                	
+	                                    labels: labels,
+	                                    datasets: [{
+	                                        data: list,
+	                                        backgroundColor: ['rgba(255, 99, 132, 1)',
+					                                            'rgba(54, 162, 235, 1)',
+					                                            'rgba(255, 206, 86, 1)',
+					                                            'rgba(153, 102, 255, 1)',
+					                                            'rgba(255, 159, 64, 1)'],
+	                                        borderColor: 'black',
+	                                        borderWidth: 0.5
+	                                    }]
+	                                },
+	                                options:{
+	                                	title: {
+	                                        display: true,
+	                                        text: title[index]
+	                                    },
+	                                    scales: {
+	                                         xAxes:[{
+	                                             stacked:true
+	                                         }],
+	                                         yAxes:[{
+	                                             ticks: {
+	                                                 suggestedMin:0,
+	                                                 suggestedMax:30,
+	                                                 stepSize:6
+	                                             },
+	                                             stacked:true
+	                                         }]
+	                                    },
+	                                    legend:{
+	                                    	display:false
+	                                    }
+	                                }
+	                            });
+	                    	})
+                    		
+                    	} else {
+                    		alert('无记录')
+                    	}
+                    }
+        	})
+        })
+        })
+
+        submitForm = function (index) {
+            $("form").submit(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../score/addScore.do",
+                    data: $.param({ "categoryId": index + 1 }) + "&" + $('form').serialize(),
+                    success: function (data) {
+                        if (data.code == 200) {
+                            alert(data.msg)
+                        }
+                    }
+                })
+            })
+        }
+
+    </script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

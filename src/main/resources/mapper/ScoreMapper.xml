@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                           "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.ScoreMapper">
+    <select id="selectScore" resultType="com.example.pojo.Score">
+        select question_id as questionid,score as score,category_id as categoryid from score where category_id = #{categoryId}
+    </select>
+
+    <delete id="deleteByCategoryId">
+        delete from score where category_id = #{categoryId}
+    </delete>
+
+    <insert id="insertByCategoryId">
+        insert into score (question_id,score,category_id) values (#{questionid},#{score},#{categoryid})
+    </insert>
+
+    <select id="selectTotalScore" resultType="hashmap">
+        SELECT SUM(score) as scores from score where category_id = #{index} 
+    </select>
+
+</mapper>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>问卷调查</title>
+</head>
+
+<body>
+	<form class="well" onsubmit="return false">
+		<h3 class="text-center">信息化基础设施项目后评估问卷</h3>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>指标</th>
+					<th>指标内容/计算公式</th>
+					<th>评价标准</th>
+					<th>评分</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th width="5%">1</th>
+					<td width="10%">目标设定的充分性</td>
+					<td width="40%">项目是否符合经营管理模式的相关要求和发展趋势，项目开发周期内立项所依据的政策及经营管理模式等是否发生偏离</td>
+					<td width="40%">每期条件满足其中一条得1分；都满足得3分，否则得0分。3期得分的平均值作为本项指标的最终得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a1" required></td>
+				</tr>
+				<tr>
+					<th width="5%">2</th>
+					<td width="10%">目标设定的有效性</td>
+					<td width="40%">可行性方案是否规范科学客观，目标设定、需求分析、方案设计等是否合理</td>
+					<td width="40%">每期的可行性方案合规范、合理得3分，否则得0分。3期得分的平均值作为本项指标的最终得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a2" required></td>
+				</tr>
+				<tr>
+					<th width="5%">3</th>
+					<td width="10%">目标设定的明确性</td>
+					<td width="40%">项目建设目标包含的建设内容是否明确，项目的立项、可行性研究报告、实施建议书的建设内容与实际招投标的建设内容是否一致</td>
+					<td width="40%">每期的建设内容一致得满分，不一致得0分。3期得分的平均值作为本项指标的最终得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a3" required></td>
+				</tr>
+				<tr>
+					<th width="5%">4</th>
+					<td width="10%">目标完成质量</td>
+					<td width="40%">根据项目建成上线后是否满足业务需求(或通过资质机构检测)情况</td>
+					<td width="40%">根据项目的监理报告或第三方评测报告，达到项目合同规定质量要求得满分，每发现一项功能或性能没有达到项目合同规定要求的扣1分，扣完为止。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a4" required></td>
+				</tr>
+				<tr>
+					<th width="5%">5</th>
+					<td width="10%">完成的及时性</td>
+					<td width="40%">项目预期目标（功能模块）是否如期完成，未完成的理由是否充分。</td>
+					<td width="40%">根据项目合同，项目建设如期完成得满分，未完成的理由是否充分，如果充分也不扣分，否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a5" required></td>
+				</tr>
+				<tr>
+					<th width="5%">6</th>
+					<td width="10%">验收的有效性</td>
+					<td width="40%">项目验收方式的合理性、验收机构的权威性和验收结果的公正性等。</td>
+					<td width="40%">是否在该期项目建设完成后半年内组织初步验收、初步验收资料是否完备、是否组织竣工验收、竣工验收资料是否完备、竣
+						工验收工作是否由项目审批部门组织实施。以上条件均满足得满分，每存在一项条件不满足的扣1分，扣完为止。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a6" required></td>
+				</tr>
+				<tr>
+					<th width="5%">7</th>
+					<td width="10%">项目规范管理</td>
+					<td width="40%">招投标流程、合同执行及相关痕迹化资料的完整性和规范性</td>
+					<td width="40%">各项都是完整和规范的，得满分，否则一项不能满足就扣1分，直到扣完为止。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a7" required></td>
+				</tr>
+				<tr>
+					<th width="5%">8</th>
+					<td width="10%">管理制度保障</td>
+					<td width="40%">项目管理是否符合省局（公司）《信息化项目管理规定》</td>
+					<td width="40%">项目管理符合省局（公司）《信息化项目管理规定》就得满分，否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a8" required></td>
+				</tr>
+				<tr>
+					<th width="5%">9</th>
+					<td width="10%">项目机构人员情况</td>
+					<td width="40%">项目组人员构成是否合理，开发（实施）人员技术力量等</td>
+					<td width="40%">满足条件，得满分，否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a9" required></td>
+				</tr>
+				<tr>
+					<th width="5%">10</th>
+					<td width="10%">项目论证情况</td>
+					<td width="40%">项目方案论证、技术论证等意见建议的落实情况</td>
+					<td width="40%">各项得到落实得满分，否则少一项扣1分，直到扣完为止。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a10" required></td>
+				</tr>
+				<tr>
+					<th width="5%">11</th>
+					<td width="10%">项目计划执行情况</td>
+					<td width="40%">是否按照项目工作计划时间完成各阶段工作任务</td>
+					<td width="40%">按照项目工作计划时间完成各阶段工作任务得满分，否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a11" required></td>
+				</tr>
+				<tr>
+					<th width="5%">12</th>
+					<td width="10%">项目变更管理</td>
+					<td width="40%">项目需求、范围、设计、功能等变更是否经过论证、审批等，变更理由是否充分</td>
+					<td width="40%">各项都经过论证和审批，变更理由充分得满分，否则一项不满足就扣一分，直到扣完为止。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a12" required></td>
+				</tr>
+				<tr>
+					<th width="5%">13</th>
+					<td width="10%">项目质量控制</td>
+					<td width="40%">例会执行情况及内测情况</td>
+					<td width="40%">例会执行和内测情况正常，得满分，否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a13" required></td>
+				</tr>
+				<tr>
+					<th width="5%">14</th>
+					<td width="10%">项目技术水平</td>
+					<td width="40%">所用技术的先进和实用性</td>
+					<td width="40%">所用的技术比较先进和使用得分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a14" required></td>
+				</tr>
+				<tr>
+					<th width="5%">15</th>
+					<td width="10%">试运行测试情况</td>
+					<td width="40%">试运行期间系统故障率</td>
+					<td width="40%">如果在试运行期间故障率超过50%不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a15" required></td>
+				</tr>
+				<tr>
+					<th width="5%">16</th>
+					<td width="10%">培训情况</td>
+					<td width="40%">相关技术人员及使用人员是否接受培训，以及对相关专业知识和技术掌握的程度</td>
+					<td width="40%">相关人员的培训和专业知识的掌握情况比较好，得满分，情况一般得1分，较差得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a16" required></td>
+				</tr>
+				<tr>
+					<th width="5%">17</th>
+					<td width="10%">文档移交情况</td>
+					<td width="40%">应移交技术、管理文档的移交情况</td>
+					<td width="40%">应移交技术和管理文档按时移交，得分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a17" required></td>
+				</tr>
+				<tr>
+					<th width="5%">18</th>
+					<td width="10%">用户满意度</td>
+					<td width="40%">根据调查问卷汇总，满意度=有效问卷中填报同意栏的总数/有效问卷数查</td>
+					<td width="40%">满意度≥0.8，得2分；0.8&gt;满意度≥0.6，得1分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a18" required></td>
+				</tr>
+				<tr>
+					<th width="5%">19</th>
+					<td width="10%">项目使用度</td>
+					<td width="40%">单位已使用该项目的人数/单位应使用该项目的人数</td>
+					<td width="40%">项目使用度≥0.6，得分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a19" required></td>
+				</tr>
+				<tr>
+					<th width="5%">20</th>
+					<td width="10%">售后服务团队</td>
+					<td width="40%">售后团队技术力量、人员组成</td>
+					<td width="40%">售后团队技术力量较强，人员组成比较合理，得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a20" required></td>
+				</tr>
+				<tr>
+					<th width="5%">21</th>
+					<td width="10%">响应时间</td>
+					<td width="40%">不同故障类型的响应时间</td>
+					<td width="40%">不同故障类型的响应时间比较及时，得分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a21" required></td>
+				</tr>
+				<tr>
+					<th width="5%">22</th>
+					<td width="10%">问题解决</td>
+					<td width="40%">问题解决的能力及效果</td>
+					<td width="40%">问题解决的能力及效果比较好，则得分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a22" required></td>
+				</tr>
+				<tr>
+					<th width="5%">23</th>
+					<td width="10%">系统稳定性</td>
+					<td width="40%">t=系统无故障运行时间/系统总运行时间</td>
+					<td width="40%">t≥0.6，得1分；小于，0.6&gt;t，不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a23" required></td>
+				</tr>
+				<tr>
+					<th width="5%">24</th>
+					<td width="10%">可持续性</td>
+					<td width="40%">是否满足当前业务增长需求</td>
+					<td width="40%">满足当前业务增长需求,得分，不满足，不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a24" required></td>
+				</tr>
+				<tr>
+					<th width="5%">25</th>
+					<td width="10%">运维管理满意度</td>
+					<td width="40%">对系统配置、管理的灵活性、便利性、全面性等方面做运维管理调查问卷,根据调查问卷汇总，对各项的认可度=有效问卷中填报认可栏的总数/有效问卷数</td>
+					<td width="40%">认可度≥0.6，得2分；0.6&gt;认可度&gt;0.4，得1分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a25" required></td>
+				</tr>
+				<tr>
+					<th width="5%">26</th>
+					<td width="10%">日常运行及维护执行</td>
+					<td width="40%">是否有相应的运行及维护管理制度，是否按照相关制度执行</td>
+					<td width="40%">有相应的运行及维护管理制度，并且按照相关制度执行，则得分，否则不得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a26" required></td>
+				</tr>
+				<tr>
+					<th width="5%">27</th>
+					<td width="10%">安全事件</td>
+					<td width="40%">发生的安全事件次数</td>
+					<td width="40%">一个月内，发生安全事件的次数大于2次，不得分，小于等于2次得分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a27" required></td>
+				</tr>
+				<tr>
+					<th width="5%">28</th>
+					<td width="10%">成本节约度</td>
+					<td width="40%">成本节约度=（原有成本-项目实施后成本）/原有成本</td>
+					<td width="40%">节约度≥0.8，得7分；0.8&gt;节约度≥0.6，得4分；0.6&gt;节约度≥0.4，得2分，0.4&gt;节约度≥0.2，得1分；0.2&gt;节约度，得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a28" required></td>
+				</tr>
+				<tr>
+					<th width="5%">29</th>
+					<td width="10%">项目资源有效利用率</td>
+					<td width="40%">利用现有设备设施数/设计使用设备设施数</td>
+					<td width="40%">有效利用率&gt;0.8，得3分；0.8≥有效利用率&gt;0.6，得2分；0.6≥有效利用率&gt;0.4，得1分；0.4≥有效利用率。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a29" required></td>
+				</tr>
+				<tr>
+					<th width="5%">30</th>
+					<td width="10%">系统维护的经济性</td>
+					<td width="40%">n=年系统维护费用/系统建设费</td>
+					<td width="40%">n&gt;0.8，得3分，0.8≥n&gt;0.6,得2分，0.6≥n&gt;0.4,得1分,否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a30" required></td>
+				</tr>
+				<tr>
+					<th width="5%">31</th>
+					<td width="10%">项目认可度</td>
+					<td width="40%">项目获得的荣誉情况，典型示范作用</td>
+					<td width="40%">项目获得的荣誉情况，典型示范作用较好，得2分，一般，得1分，较差，得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a31" required></td>
+				</tr>
+				<tr>
+					<th width="5%">32</th>
+					<td width="10%">项目差异</td>
+					<td width="40%">与全省系统单位类似项目重复情况</td>
+					<td width="40%">与全省系统单位类似项目没有重复，得7分，否则0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a32" required></td>
+				</tr>
+				<tr>
+					<th width="5%">33</th>
+					<td width="10%">业务增长满足</td>
+					<td width="40%">是否满足未来三年内的业务增长</td>
+					<td width="40%">满足未来三年内的业务增长得3分，否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a33" required></td>
+				</tr>
+				<tr>
+					<th width="5%">34</th>
+					<td width="10%">功能满足</td>
+					<td width="40%">是否满足未来三年内的业务变化</td>
+					<td width="40%">满足未来三年内的业务变化得8分，否则得0分</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a34" required></td>
+				</tr>
+				<tr>
+					<th width="5%">35</th>
+					<td width="10%">功能扩展满足</td>
+					<td width="40%">是否满足未来功能扩展需求</td>
+					<td width="40%">满足未来功能扩展需求，得5分，否则得0分。</td>
+					<td><input type="number" min="0" class="form-control"
+						name="a35" required></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="text-center">
+			<button class="btn btn-primary" type="submit">提交</button>
+		</div>
+	</form>
+
+	<script src="../bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+	<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

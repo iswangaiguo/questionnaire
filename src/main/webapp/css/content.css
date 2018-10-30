@@ -1,0 +1,102 @@
+
+aside button{
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    width: 100%;
+    margin-left: 0;
+}
+.firstone {
+    margin-top: 20%;
+}
+
+aside div {
+    margin-bottom: 0.5em;
+}
+aside a {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    border: 0;
+}
+
+
+aside .list-group-item {
+    text-align: left
+}
+
+
+aside{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -250px;
+    width: 250px;
+    background-color: darkkhaki;
+    transition: 0.2s ease-out;
+}
+
+#sidemenu{
+    display: none
+}
+
+#sidemenu:checked + aside {
+    left:0;
+}
+
+
+#sideMenuControl {
+    background: white;
+    border-radius: 70px;
+    color: #011935;
+    cursor: pointer;
+    display: block;
+    font-family: Courier New;
+    font-size: 2em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    display: inline-block;
+}
+#sideMenuControl:hover {
+    background: #eee;
+}
+
+.main {
+    padding: 10px 50px 10px 50px;
+    transition: 0.2s ease-out;
+
+}
+
+#sidemenu:checked ~ .main {
+    margin-left: 240px;
+
+}
+thead th {
+    text-align: center
+}
+
+
+form h3 {
+    margin-bottom: 50px
+}
+
+form tbody tr td:last-child input{
+    inline-size:80px
+}
+
+#myscore {
+    margin-left:20%;
+    margin-right:20%
+}
+#myscore h2 {
+	margin-bottom:1.5em
+}
+
+#myscore td {
+    text-align:center
+}
+
+
